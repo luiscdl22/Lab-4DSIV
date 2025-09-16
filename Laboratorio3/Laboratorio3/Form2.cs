@@ -96,5 +96,7 @@ namespace Laboratorio3
         {
             VerificarCampos();
         }
+
+       
     }
 }

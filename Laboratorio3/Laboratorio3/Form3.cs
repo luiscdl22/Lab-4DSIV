@@ -117,9 +117,12 @@ namespace Laboratorio3
             this.Hide();
         }
 
-        private void git(object sender, EventArgs e)
+       
+        private void txtNombre_TextChanged_1(object sender, EventArgs e)
         {
 
         }
+
+       
     }
 }
