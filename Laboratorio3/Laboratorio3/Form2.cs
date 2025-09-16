@@ -15,6 +15,8 @@ namespace Laboratorio3
         public Form2()
         {
             InitializeComponent();
+
+            btnMostrarPalindromos.Enabled = false;
         }
         private bool EsPalindromo(int numero)
         {
@@ -30,7 +32,8 @@ namespace Laboratorio3
         }
         private void btnMostrarPalindromos_Click(object sender, EventArgs e)
         {
-           
+          
+
             if (int.TryParse(txtInicioRango.Text, out int inicio) && int.TryParse(txtFinRango.Text, out int fin))
             {
                 if (inicio >= 0 && fin >= inicio)
@@ -74,6 +77,24 @@ namespace Laboratorio3
             form1.Show();
             // Ocultar el Formulario 3
             this.Hide();
+        }
+
+       // metodo para 
+        private void VerificarCampos()
+        {
+         
+            btnMostrarPalindromos.Enabled = !string.IsNullOrWhiteSpace(txtInicioRango.Text) && !string.IsNullOrWhiteSpace(txtFinRango.Text);
+        
+        }
+        
+        private void txtInicioRango_TextChanged(object sender, EventArgs e)
+        {
+            VerificarCampos();
+        }
+
+        private void txtFinRango_TextChanged(object sender, EventArgs e)
+        {
+            VerificarCampos();
         }
     }
 }

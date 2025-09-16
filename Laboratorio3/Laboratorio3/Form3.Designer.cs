@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnFinalizar = new System.Windows.Forms.Button();
-            this.btnAnterior3 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblResultado = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,7 +39,9 @@
             this.cmbPlazo = new System.Windows.Forms.ComboBox();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.lblResultado = new System.Windows.Forms.Label();
+            this.btnFinalizar = new System.Windows.Forms.Button();
+            this.btnAnterior3 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,37 +64,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // btnFinalizar
+            // lblResultado
             // 
-            this.btnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizar.Location = new System.Drawing.Point(387, 408);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(152, 30);
-            this.btnFinalizar.TabIndex = 9;
-            this.btnFinalizar.Text = "FINALIZAR";
-            this.btnFinalizar.UseVisualStyleBackColor = true;
-            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
-            // 
-            // btnAnterior3
-            // 
-            this.btnAnterior3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnterior3.Location = new System.Drawing.Point(12, 408);
-            this.btnAnterior3.Name = "btnAnterior3";
-            this.btnAnterior3.Size = new System.Drawing.Size(152, 30);
-            this.btnAnterior3.TabIndex = 10;
-            this.btnAnterior3.Text = "ANTERIOR";
-            this.btnAnterior3.UseVisualStyleBackColor = true;
-            this.btnAnterior3.Click += new System.EventHandler(this.btnAnterior3_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(60, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(433, 32);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "DEPOSITOS A PLAZOS FIJOS";
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.Location = new System.Drawing.Point(21, 234);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(44, 16);
+            this.lblResultado.TabIndex = 24;
+            this.lblResultado.Text = "label1";
             // 
             // label4
             // 
@@ -138,6 +115,7 @@
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(100, 22);
             this.txtMonto.TabIndex = 19;
+            this.txtMonto.Click += new System.EventHandler(this.txtMonto_TextChanged);
             // 
             // btnCalcular
             // 
@@ -147,7 +125,7 @@
             this.btnCalcular.TabIndex = 18;
             this.btnCalcular.Text = "CALCULAR";
             this.btnCalcular.UseVisualStyleBackColor = true;
-            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click_1);
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // cmbPlazo
             // 
@@ -162,6 +140,7 @@
             this.cmbPlazo.Name = "cmbPlazo";
             this.cmbPlazo.Size = new System.Drawing.Size(121, 24);
             this.cmbPlazo.TabIndex = 17;
+            this.cmbPlazo.Click += new System.EventHandler(this.cmbPlazo_SelectedIndexChanged);
             // 
             // txtCedula
             // 
@@ -169,6 +148,7 @@
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(100, 22);
             this.txtCedula.TabIndex = 16;
+            this.txtCedula.Click += new System.EventHandler(this.txtCedula_TextChanged);
             // 
             // txtNombre
             // 
@@ -176,27 +156,52 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 22);
             this.txtNombre.TabIndex = 15;
+            this.txtNombre.Click += new System.EventHandler(this.txtNombre_TextChanged);
             // 
-            // lblResultado
+            // btnFinalizar
             // 
-            this.lblResultado.AutoSize = true;
-            this.lblResultado.Location = new System.Drawing.Point(21, 234);
-            this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(44, 16);
-            this.lblResultado.TabIndex = 24;
-            this.lblResultado.Text = "label1";
+            this.btnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizar.Location = new System.Drawing.Point(387, 408);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(152, 30);
+            this.btnFinalizar.TabIndex = 9;
+            this.btnFinalizar.Text = "FINALIZAR";
+            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            // 
+            // btnAnterior3
+            // 
+            this.btnAnterior3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnterior3.Location = new System.Drawing.Point(12, 408);
+            this.btnAnterior3.Name = "btnAnterior3";
+            this.btnAnterior3.Size = new System.Drawing.Size(152, 30);
+            this.btnAnterior3.TabIndex = 10;
+            this.btnAnterior3.Text = "ANTERIOR";
+            this.btnAnterior3.UseVisualStyleBackColor = true;
+            this.btnAnterior3.Click += new System.EventHandler(this.btnAnterior3_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(60, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(433, 32);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "DEPOSITOS A PLAZOS FIJOS";
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 450);
+            this.ClientSize = new System.Drawing.Size(982, 508);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnAnterior3);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form3";
             this.Text = " ";
+            this.Click += new System.EventHandler(this.git);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

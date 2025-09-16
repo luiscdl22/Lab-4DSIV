@@ -15,6 +15,8 @@ namespace Laboratorio3
         public Form3()
         {
             InitializeComponent();
+            btnCalcular.Enabled = false;
+
         }
         private double CalcularMontoAcumulado(double depositoInicial, int meses)
         {
@@ -70,12 +72,11 @@ namespace Laboratorio3
 
         private void ValidarCampos()
         {
-            bool camposLlenos = !string.IsNullOrWhiteSpace(txtNombre.Text) &&
-                                !string.IsNullOrWhiteSpace(txtCedula.Text) &&
-                                !string.IsNullOrWhiteSpace(txtMonto.Text) &&
-                                cmbPlazo.SelectedItem != null;
+            btnCalcular.Enabled = !string.IsNullOrWhiteSpace(txtNombre.Text) &&
+                                  !string.IsNullOrWhiteSpace(txtCedula.Text) &&
+                                  !string.IsNullOrWhiteSpace(txtMonto.Text) ;
+                              
 
-            btnCalcular.Enabled = camposLlenos;
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
@@ -109,23 +110,14 @@ namespace Laboratorio3
         {
             // Crear una instancia del Formulario 2
             Form2 form2 = new Form2();
-            // Mostrar el Formulario 2
+            // Mostr
+            // ar el Formulario 2
             form2.Show();
             // Ocultar el Formulario 3
             this.Hide();
         }
 
-        private void cmbPlazo_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCalcular_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblResultado_Click(object sender, EventArgs e)
+        private void git(object sender, EventArgs e)
         {
 
         }

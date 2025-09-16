@@ -67,6 +67,7 @@
             this.txtInicioRango.Name = "txtInicioRango";
             this.txtInicioRango.Size = new System.Drawing.Size(100, 22);
             this.txtInicioRango.TabIndex = 2;
+            this.txtInicioRango.TextChanged += new System.EventHandler(this.txtInicioRango_TextChanged);
             // 
             // txtFinRango
             // 
@@ -74,6 +75,7 @@
             this.txtFinRango.Name = "txtFinRango";
             this.txtFinRango.Size = new System.Drawing.Size(100, 22);
             this.txtFinRango.TabIndex = 3;
+            this.txtFinRango.TextChanged += new System.EventHandler(this.txtFinRango_TextChanged);
             // 
             // label1
             // 
@@ -141,7 +143,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 450);
+            this.ClientSize = new System.Drawing.Size(982, 508);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnAnterior3);
             this.Controls.Add(this.btnSiguiente2);
@@ -153,7 +155,8 @@
             this.Controls.Add(this.lbPalindromos);
             this.Controls.Add(this.btnMostrarPalindromos);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Palindromos Numerales";
             this.ResumeLayout(false);
             this.PerformLayout();
 
