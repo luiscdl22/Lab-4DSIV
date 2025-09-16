@@ -15,6 +15,8 @@ namespace Laboratorio3
         public Form1()
         {
             InitializeComponent();
+            //se deshabilita el boton hasta que el usuario ingrese algo en el textbox
+            btnContar.Enabled = false; 
         }
 
         private void ContarVocales(string palabra)
@@ -58,14 +60,23 @@ namespace Laboratorio3
 
         private void btnContar_Click(object sender, EventArgs e)
         {
-            
-            string palabraIngresada = txtPalabra.Text;
-            if (!string.IsNullOrWhiteSpace(palabraIngresada))
-            {
-                ContarVocales(palabraIngresada);
+           string palabraIngresada = txtPalabra.Text.Trim();
+            // Valida que la palabra solo contenga letras
+            foreach (char ch in palabraIngresada)
+           {
+                // Si el carácter no es una letra, muestra un mensaje de error y sale del metodo
+                if (!char.IsLetter(ch))
+               {
+                    // Muestra un mensaje de error y sale del metodo
+                    MessageBox.Show("Solo ingresar letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return; 
+
+                }
             }
-        
-    }
+
+            ContarVocales(palabraIngresada);
+
+        }
 
         private void txtPalabra_TextChanged(object sender, EventArgs e)
         {

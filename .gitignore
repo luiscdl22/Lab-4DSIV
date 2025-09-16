@@ -1,0 +1,22 @@
+# Carpetas de compilación
+bin/
+obj/
+
+# Archivos de Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ejecutables y archivos de depuración
+*.exe
+*.dll
+*.pdb
+
+# Archivos generados por Visual Studio
+*.cache
+*.log
+*.db
+*.db-shm
+*.db-wal
